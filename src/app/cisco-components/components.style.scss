@@ -1,0 +1,15 @@
+.add-row {
+    width: 20px;
+    height: 20px;
+}
+
+.add-new {
+    display: table;
+    width: 100%;
+    border: 1px solid;
+    .cui-select {
+        width: 80%;
+        display: table-cell;
+        float: left;
+    }
+}

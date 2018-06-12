@@ -1,0 +1,27 @@
+<div class="f-form col-md-8 ">
+    <div class="form-label ">
+        <h2> Message layout </h2>
+    </div>
+
+    <cui-steps #workflowWidget [steps]="steps" small="true"></cui-steps>
+    <form [formGroup]="form" (ngSubmit)="submit()" role="form">
+
+        <div *ngFor="let step of steps; let index = index; let last = last;">
+            <div *ngIf="currentStep==index">
+
+                <formly-form [form]="form.at(index)" [model]="model" [fields]="step.fields" [options]="options">
+                </formly-form>
+            </div>
+        </div>
+
+        <div class="center">
+            <button *ngIf="currentStep !== 0" class="btn btn-primary" type="button" (click)="prevStep(currentStep)">Back</button>
+            <button *ngIf="currentStep!==steps.length-1" class="btn btn-primary" type="button" [disabled]="!form.at(currentStep).valid" (click)="nextStep(currentStep)">Next</button>
+            <button *ngIf="currentStep==steps.length-1" class="btn btn-primary" [disabled]="!form.valid" type="submit">Submit</button>
+        </div>
+
+    </form>
+
+
+</div>
+{{ model|json }}

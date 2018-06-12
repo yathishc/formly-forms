@@ -1,0 +1,11 @@
+button {
+    margin-top: 13%;
+    margin-left: 17%;
+    background-color: inherit;
+    border: none;
+    color: initial;
+}
+
+.container {
+    height: 800px;
+}
